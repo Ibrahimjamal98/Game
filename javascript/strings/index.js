@@ -16,6 +16,20 @@ function toTitleCase(name) {
 
   return titleCase;
 }
+function toTitleCase2(name){ 
+    let array=name.split(" "); 
+    let answer="";
+    for (element of array){
+        answer+=element[0].toUpperCase(); 
+        answer+=element.slice(1);
+        answer+=" "; 
+    
+    }
+    return answer;
+
+    // return array[0][0].toUpperCase() +slice(1,array[0].length)
+}
+console.log(toTitleCase2(name1)); 
 // console.log(toTitleCase(name1));
 
 let inventory = ["iron sword", "healing potion", "steel shield"];
@@ -53,12 +67,15 @@ function formatNPCName(name) {
 }
 // console.log(formatNPCName(npcname));
 function parseDuration(duration){ 
-    const arr=duration.split(" "); 
-    const hours=parseInt(arr[0]); 
-    const minutes=parseInt(arr[1]); 
-    return `{hours: ${hours}, minutes: ${minutes}}`; 
+    const [hours,minutes]=duration.split(" ");
+    return {
+      hours: parseInt(hours),
+      minutes:parseInt(minutes)
+    }
+    
+    // return `{hours: ${hours}, minutes: ${minutes}}`; 
 }
-// console.log(parseDuration("3h 45min"));
+console.log(parseDuration("3h 45min"));
 
 function getGameAcronym(title){ 
     const arr=title.split(" "); 
