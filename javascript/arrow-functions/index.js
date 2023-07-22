@@ -15,29 +15,21 @@ const getTotalInventoryValue = items => {
    return 'Total inventory  is ' + totalValue;
 }
 
-let sortedItems =  (item1, item2)=> {
-    return item1.value - item2.value;
-   };
 
-   const getItemNames=items => return items.map({
-    items.name; 
-   })
+   const sortedItems = (value)=>{
+    return value.sort((a,b)=> b.value - a.value)
+   }
 
 
-
+     const getItemNames =(items)=> items.map( item=> item.name); 
 
    let y={value:4}; 
    let x={value:3}; 
 
 
-
-   console.log(sortedItems(y,x))
-
-
+let items=[{name:"yousef"},{name:"mahmoud"}]; 
+   console.log(getItemNames(items));
 
 
 
 
-
-
-let player1={name:"mahmoud"}; 
